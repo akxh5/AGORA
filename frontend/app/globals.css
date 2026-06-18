@@ -1,0 +1,120 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-inter), sans-serif;
+  --font-mono: var(--font-space-grotesk), "Courier New", monospace;
+
+  /* Colors */
+  --color-primary: #e84142;
+  --color-secondary: #0057ff;
+  --color-success: #00c853;
+  --color-warning: #ffaa00;
+  --color-page-bg: #fffef0;
+}
+
+body {
+  background-color: #fffef0;
+  color: #000000;
+  font-family: var(--font-sans);
+  background-image: radial-gradient(#00000015 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Custom Neo-Brutalist shadows */
+.brutalist-shadow-sm {
+  box-shadow: 2px 2px 0px #000000;
+}
+
+.brutalist-shadow {
+  box-shadow: 4px 4px 0px #000000;
+}
+
+.brutalist-shadow-lg {
+  box-shadow: 6px 6px 0px #000000;
+}
+
+/* Button interactive shadows */
+.brutalist-btn-shadow {
+  box-shadow: 4px 4px 0px #000000;
+  transition: all 0.1s ease;
+}
+
+.brutalist-btn-shadow:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0px #000000;
+}
+
+.brutalist-btn-shadow:active {
+  transform: translate(4px, 4px);
+  box-shadow: 0px 0px 0px #000000;
+}
+
+/* Animations */
+@keyframes march {
+  0% {
+    background-position: 0 0, 100% 100%, 0 100%, 100% 0;
+  }
+  100% {
+    background-position: 20px 0, 100% -20px, -20px 100%, 100% 20px;
+  }
+}
+
+.animate-march {
+  background-image: linear-gradient(to right, #000000 60%, transparent 40%),
+                    linear-gradient(to bottom, #000000 60%, transparent 40%),
+                    linear-gradient(to right, #000000 60%, transparent 40%),
+                    linear-gradient(to bottom, #000000 60%, transparent 40%);
+  background-position: 0 0, 100% 0, 0 100%, 0 0;
+  background-size: 20px 3px, 3px 20px, 20px 3px, 3px 20px;
+  background-repeat: repeat-x, repeat-y, repeat-x, repeat-y;
+  animation: march 0.8s linear infinite;
+}
+
+@keyframes slide-in-bounce {
+  0% {
+    transform: translateX(-40px) scale(0.95);
+    opacity: 0;
+  }
+  60% {
+    transform: translateX(5px) scale(1.02);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-slide-bounce {
+  animation: slide-in-bounce 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes pulse-red-border {
+  0%, 100% {
+    border-color: #000000;
+    box-shadow: 6px 6px 0px #000000;
+  }
+  50% {
+    border-color: #e84142;
+    box-shadow: 6px 6px 0px #e84142;
+  }
+}
+
+.agent-card-active {
+  animation: pulse-red-border 1.5s infinite ease-in-out;
+}
+
+@keyframes fade-slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fade-slide {
+  animation: fade-slide-in 0.3s ease-out forwards;
+}
