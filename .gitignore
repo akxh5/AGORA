@@ -1,0 +1,32 @@
+# Dependency directories
+node_modules/
+
+# Next.js build output
+.next/
+out/
+build/
+
+# Local env files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.backup
+backend/.env
+
+# Explicitly allow env templates
+!backend/.env.example
+!frontend/.env.example
+
+# Testing / coverage
+coverage/
+
+# Hardhat build artifacts
+backend/cache/
+backend/artifacts/
+
+# System files
+.DS_Store
+*.pem
+*.log
